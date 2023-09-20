@@ -23,14 +23,7 @@
     "noUnusedParameters": true,
 
     /* Completeness */
-    "skipLibCheck": true,
-    "paths": {
-      "@/*": ["./src/*"],
-      "@routes/*": ["./src/routes/*"],
-      "@models/*": ["./src/models/*"],
-      "@config/*": ["./src/config/*"],
-      "@tests/*": ["./tests/*"],
-    }
+    "skipLibCheck": true
   }
 }
 
