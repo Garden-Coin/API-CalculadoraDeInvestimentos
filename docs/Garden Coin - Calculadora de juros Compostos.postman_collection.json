@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "8119ed2c-3870-4d75-a665-440168fc37e5",
+		"name": "Garden Coin - Calculadora de juros Compostos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6663010"
+	},
+	"item": [
+		{
+			"name": "Simulação",
+			"item": [
+				{
+					"name": "Juros Compostos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"2023-09-01\",\r\n    \"endDate\": \"2025-01-01\",\r\n    \"profitability\": 0.05,\r\n    \"profitabilityType\": 1,\r\n    \"initialValue\": 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/simulacao/juros-compostos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"simulacao",
+								"juros-compostos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/health-check",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"health-check"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
