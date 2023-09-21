@@ -5,9 +5,16 @@ import { JurosCompostosResponse } from '../responses/juros-compostos-response';
 const router = Router();
 
 router.post('/juros-compostos',
-    (_: JurosCompostosRequest, res: JurosCompostosResponse) => {
+    (req : JurosCompostosRequest, res: JurosCompostosResponse) => {
+        const { body } = req;
         res.status(200).json({
-            'status': 200
+            startDate: body.startDate,
+            endDate: body.endDate,
+            profitability: body.profitability,
+            realProfitability: body.profitability,
+            profitabilityType: body.profitabilityType,
+            initialValue: body.initialValue,
+            finalValue: body.initialValue + (body.initialValue * body.profitability)
         });
     }
 )
