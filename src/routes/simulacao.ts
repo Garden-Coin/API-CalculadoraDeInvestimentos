@@ -1,22 +1,11 @@
 import { Router } from 'express';
-import { JurosCompostosRequest } from '../requests/juros-compostos-request';
-import { JurosCompostosResponse } from '../responses/juros-compostos-response';
+import { validate } from 'express-validation';
+
+import JurosCompostosController from '../controllers/juros-compostos-controller';
+import JurosCompostosRequestValidator from '../validators/juros-compostos-request-validator';
 
 const router = Router();
 
-router.post('/juros-compostos',
-    (req : JurosCompostosRequest, res: JurosCompostosResponse) => {
-        const { body } = req;
-        res.status(200).json({
-            startDate: body.startDate,
-            endDate: body.endDate,
-            profitability: body.profitability,
-            realProfitability: body.profitability,
-            profitabilityType: body.profitabilityType,
-            initialValue: body.initialValue,
-            finalValue: body.initialValue + (body.initialValue * body.profitability)
-        });
-    }
-)
+router.post('/juros-compostos', validate(JurosCompostosRequestValidator), JurosCompostosController.calcular)
 
 module.exports = router;
