@@ -1,5 +1,5 @@
 enum ProfitabilityType{
-    Anual = 1,
-    Montlhy = 2
+    Monthly = 1,
+    Anual = 2
 }
 export default ProfitabilityType;

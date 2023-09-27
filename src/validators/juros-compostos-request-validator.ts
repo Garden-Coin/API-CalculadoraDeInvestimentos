@@ -1,12 +1,12 @@
 import Joi from 'joi';
+import ProfitabilityType from '../enums/profitability-type';
 
 export default {
     body: Joi.object().keys(
         {
-            startDate: Joi.date().required(),
-            endDate: Joi.date().min(Joi.ref('startDate')).required(),
+            period: Joi.number().integer().min(1).required(),
             profitability: Joi.number().min(0.0).max(1.0).required(),
-            profitabilityType: Joi.number().required(),
+            profitabilityType: Joi.number().valid(ProfitabilityType.Monthly, ProfitabilityType.Anual).required(),
             initialValue: Joi.number().min(0).required() 
         }
     )
