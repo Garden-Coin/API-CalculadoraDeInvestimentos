@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"startDate\": \"2023-09-01\",\r\n    \"endDate\": \"2025-01-01\",\r\n    \"profitability\": 0.05,\r\n    \"profitabilityType\": 1,\r\n    \"initialValue\": 1000\r\n}",
+							"raw": "{\r\n    \"period\": 1,\r\n    \"profitability\": 0.05,\r\n    \"profitabilityType\": 1,\r\n    \"initialValue\": 1000\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -42,7 +42,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"startDate\": \"2023-09-01\",\r\n    \"endDate\": \"2025-01-01\",\r\n    \"profitability\": 0.05,\r\n    \"profitabilityType\": 1,\r\n    \"initialValue\": 1000\r\n}",
+									"raw": "{\r\n    \"period\": 6,\r\n    \"profitability\": 0.05,\r\n    \"profitabilityType\": 1,\r\n    \"initialValue\": 1000\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -94,7 +94,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"startDate\": \"2023-09-01\",\n    \"endDate\": \"2025-01-01\",\n    \"profitability\": 0.05,\n    \"realProfitability\": 0.05,\n    \"profitabilityType\": 1,\n    \"initialValue\": 1000,\n    \"finalValue\": 1050\n}"
+							"body": "{\n    \"period\": 6,\n    \"profitability\": 0.05,\n    \"realProfitability\": 0.05,\n    \"profitabilityType\": 1,\n    \"initialValue\": 1000,\n    \"finalValue\": 1050\n}"
 						}
 					]
 				}
