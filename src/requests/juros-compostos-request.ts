@@ -2,8 +2,7 @@ import ProfitabilityType from '../enums/profitability-type';
 import { Request } from 'express';
 
 interface JurosCompostosRequestBody {
-    startDate: Date,
-    endDate: Date,
+    period: number,
     profitability: number,
     profitabilityType: ProfitabilityType,
     initialValue: number
