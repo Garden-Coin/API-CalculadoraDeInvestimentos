@@ -6,8 +6,7 @@ export default {
         const { body } = req;
         res.status(200).json(
             {
-                startDate: body.startDate,
-                endDate: body.endDate,
+                period: body.period,
                 profitability: body.profitability,
                 realProfitability: body.profitability,
                 profitabilityType: body.profitabilityType,

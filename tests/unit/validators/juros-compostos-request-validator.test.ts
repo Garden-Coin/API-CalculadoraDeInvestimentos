@@ -1,10 +1,9 @@
 import { describe, it } from 'node:test';
 
 describe(
-    "validators",
+    "juros compostos request validator",
     {
         concurrency: false,
-        only: false,
         skip: false,
         timeout: Infinity,
         todo: true
@@ -16,8 +15,39 @@ describe(
                 it(
                     "should be bigger than zero",
                     ()=>{}
-                )
+                );
             }
-        )
+        );
+        describe(
+            "profitability",
+            ()=>{
+                it(
+                    "should be zero or bigger",
+                    ()=>{}
+                );
+                it(
+                    "should be one or smaller",
+                    ()=>{}
+                );
+            }
+        );
+        describe(
+            "profitabilityType",
+            ()=>{
+                it(
+                    "should be an valid ProfitabilityType enum",
+                    ()=>{}
+                );
+            }
+        );
+        describe(
+            "initialValue",
+            ()=>{
+                it(
+                    "should be bigger than zero",
+                    ()=>{}
+                );
+            }
+        );
     }
 )
