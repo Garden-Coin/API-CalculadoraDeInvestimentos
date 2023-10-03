@@ -9,7 +9,7 @@
     "src": "src"
   },
   "scripts": {
-    "test": "node --test ./test",
+    "test": "jest",
     "dev": "nodemon ./src/index.ts"
   },
   "authors": [
@@ -23,8 +23,14 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.17",
-    "ts-node": "^10.9.1",
+    
     "nodemon": "^3.0.1",
-    "typescript": "^5.2.2"
+    "ts-node": "^10.9.1",
+    "tsx": "^3.13.0",
+    "typescript": "^5.2.2",
+
+    "@types/jest": "^29.5.5",
+    "ts-jest": "^29.1.1",
+    "jest": "^29.7.0"
   }
 }

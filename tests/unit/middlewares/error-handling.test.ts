@@ -1,22 +1,12 @@
-import { describe, it } from 'node:test';
-
 describe(
     "error handling",
-    {
-        concurrency: false,
-        skip: false,
-        timeout: Infinity,
-        todo: true
-    },
     ()=>{
         describe(
             "validation error",
             ()=>{
-                it(
+                test(
                     "should return validation errors",
-                    ()=>{
-        
-                    }
+                    async ()=>{ }
                 );
                 it(
                     "should return http 404 not found",

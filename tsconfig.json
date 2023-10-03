@@ -6,7 +6,7 @@
 
     /* Modules */
     "module": "commonjs",
-    "rootDir": "./src",
+    "rootDir": ".",
     "outDir": "./dist",
 
     /* Interop Constraints */
@@ -26,5 +26,3 @@
     "skipLibCheck": true
   }
 }
-
-

@@ -2,12 +2,6 @@ import { describe, it } from 'node:test';
 
 describe(
     "juros compostos request validator",
-    {
-        concurrency: false,
-        skip: false,
-        timeout: Infinity,
-        todo: true
-    },
     ()=>{
         describe(
             "period",
