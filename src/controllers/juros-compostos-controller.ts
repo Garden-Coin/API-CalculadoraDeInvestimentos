@@ -1,5 +1,5 @@
-import { JurosCompostosRequest } from "../requests/juros-compostos-request";
-import { JurosCompostosResponse } from "../responses/juros-compostos-response";
+import { JurosCompostosRequest } from   "@src/requests/juros-compostos-request";
+import { JurosCompostosResponse } from  "@src/responses/juros-compostos-response";
 
 export default {
     calcular: function(req : JurosCompostosRequest, res: JurosCompostosResponse){

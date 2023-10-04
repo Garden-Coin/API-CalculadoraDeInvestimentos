@@ -1,5 +1,5 @@
 import Joi from 'joi';
-import ProfitabilityType from '../enums/profitability-type';
+import ProfitabilityType from '@src/enums/profitability-type';
 
 export default {
     body: Joi.object().keys(
