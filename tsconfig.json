@@ -1,21 +1,21 @@
 {
   "compilerOptions": {
-
-    /* Language and Environment */
     "target": "es2016",
 
-    /* Modules */
+    "types": [
+      "@types/jest",
+      "@types/express"
+    ],
+
     "baseUrl": ".",
     "module": "commonjs",
     "rootDir": ".",
     "outDir": "./dist",
     "moduleResolution": "node",
 
-    /* Interop Constraints */
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
 
-    /* Type Checking */
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -24,7 +24,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
 
-    /* Completeness */
     "skipLibCheck": true,
 
     "paths": {
