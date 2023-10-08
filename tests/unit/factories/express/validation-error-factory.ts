@@ -1,4 +1,4 @@
-import { ValidationError } from "express-validation";
+import { ValidationError } from 'express-validation';
 
 type ValidationErrorProps = {
     params?: [];
@@ -9,8 +9,8 @@ type ValidationErrorProps = {
     body?: [];
 };
 export default function(props?: ValidationErrorProps){    
-    return new ValidationError(
-        {...props},
-        { }
-    );
+	return new ValidationError(
+		{...props},
+		{ }
+	);
 }

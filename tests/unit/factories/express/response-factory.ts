@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Response } from 'express';
 
 type ResponseFactoryProps = {
@@ -6,10 +8,10 @@ type ResponseFactoryProps = {
 };
 
 export default function(props?: ResponseFactoryProps){
-    const res = { } as Response;
+	const res = { } as Response;
 
-    res.status =  props?.status ?? function(_){ return res; } 
-    res.json = props?.json?? function(_){ return res; }
+	res.status =  props?.status ?? function(_){ return res; }; 
+	res.json = props?.json?? function(_){ return res; };
     
-    return res;
+	return res;
 }

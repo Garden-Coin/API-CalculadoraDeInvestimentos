@@ -6,6 +6,6 @@ import JurosCompostosRequestValidator from '@src/validators/juros-compostos-requ
 
 const router = Router();
 
-router.post('/juros-compostos', validate(JurosCompostosRequestValidator), JurosCompostosController.calcular)
+router.post('/juros-compostos', validate(JurosCompostosRequestValidator), JurosCompostosController.calcular);
 
 module.exports = router;
