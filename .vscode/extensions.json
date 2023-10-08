@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "orta.vscode-jest",
+        "firsttris.vscode-jest-runner",
+        "christian-kohler.path-intellisense",
+        "dbaeumer.vscode-eslint",
+        "mikestead.dotenv"
+    ]
+}
