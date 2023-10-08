@@ -4,7 +4,7 @@ import { JurosCompostosResponse } from  "@src/responses/juros-compostos-response
 export default {
     calcular: function(req : JurosCompostosRequest, res: JurosCompostosResponse){
         const { body } = req;
-        res.status(200).json(
+        return res.status(200).json(
             {
                 period: body.period,
                 profitability: body.profitability,
