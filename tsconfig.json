@@ -1,37 +1,40 @@
 {
   "compilerOptions": {
-
-    /* Language and Environment */
     "target": "es2016",
 
-    /* Modules */
+    "types": [
+      "@types/jest",
+      "@types/express"
+    ],
+    
     "module": "commonjs",
-    "rootDir": "./src",
     "outDir": "./dist",
-
-    /* Interop Constraints */
+    "moduleResolution": "node",
+    
+    "noEmitOnError": true,
+    
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-
-    /* Type Checking */
+    
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
     "useUnknownInCatchVariables": true,
+
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "noImplicitOverride": true,
+    "noImplicitThis": true,
 
-    /* Completeness */
-    "skipLibCheck": true,
     "paths": {
-      "@/*": ["./src/*"],
-      "@routes/*": ["./src/routes/*"],
-      "@models/*": ["./src/models/*"],
-      "@config/*": ["./src/config/*"],
-      "@tests/*": ["./tests/*"],
+      "@src/*": [ "./src/*" ],
+      "@config/*": [ "./src/config/*" ],
+      "@tests/*": [ "./tests/*" ],
+      "@unit-tests/*": [ "./tests/unit/*" ]
     }
+  },
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
   }
 }
-
-

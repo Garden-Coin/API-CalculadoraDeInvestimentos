@@ -1,4 +1,4 @@
-import express from 'express'
+import express from 'express';
 import { port } from '@config/server';
 
 const app = express();
