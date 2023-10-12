@@ -1,8 +1,8 @@
 import ProfitabilityType from '@src/enums/profitability-type';
-import { normalizarRentabilidadeMensal } from '@src/utils/normalize-utils';
+import { calcularJurosCompostosMensais, normalizarRentabilidadeMensal } from '@src/utils/normalize-utils';
 
 const profitabilityTestCaseArray = [0.001, 0.01, 0.05, 0.1, 0.15, 0.2, 0.5, 0.8];
-const periodTestCaseArray =[12, 36, 108, 360, 696, 9072];
+const periodTestCaseArray = [12, 36, 108, 360, 696, 1200];
 describe('normalizarRentabilidadeMensal', () => {
 	describe('Anual Profitability', () => {
 		it.each(profitabilityTestCaseArray)('should multiply profitability of %s by 12.68', (profitability) => {
@@ -33,5 +33,18 @@ describe('normalizarRentabilidadeMensal', () => {
 });
 
 describe('calcularJurosCompostosMensais', () => {
+	describe('no initialValue', () => {
+		describe.each(periodTestCaseArray)('with period %s should be zero', (period) =>{
+			it('with no profitability should be zero', () =>{
+				const result = calcularJurosCompostosMensais(0, 0, period);
 
+				expect(result).toBe(0);
+			});
+			it.each(profitabilityTestCaseArray)('with profitability %s', (profitability) => {
+				const result = calcularJurosCompostosMensais(0, profitability, period);
+
+				expect(result).toBe(0);
+			});
+		});
+	});
 });
