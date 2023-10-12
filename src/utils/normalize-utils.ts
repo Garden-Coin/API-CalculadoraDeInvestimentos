@@ -4,7 +4,7 @@ export function normalizarRentabilidadeMensal(profitability: number, period: num
 	if (profitabilityType == ProfitabilityType.Anual) {
 		return {
 			montlhyProfitability: profitability * 12.68,
-			monthlyPeriod: period * 12
+			monthlyPeriod: period / 12
 		};
 	}
 
