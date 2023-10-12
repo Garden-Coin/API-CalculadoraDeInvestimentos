@@ -34,13 +34,13 @@ describe('normalizarRentabilidadeMensal', () => {
 
 describe('calcularJurosCompostosMensais', () => {
 	describe('no initialValue', () => {
-		describe.each(periodTestCaseArray)('with period %s should be zero', (period) =>{
-			it('with no profitability should be zero', () =>{
+		describe.each(periodTestCaseArray)('with period %s', (period) => {
+			it('with no profitability should be zero', () => {
 				const result = calcularJurosCompostosMensais(0, 0, period);
 
 				expect(result).toBe(0);
 			});
-			it.each(profitabilityTestCaseArray)('with profitability %s', (profitability) => {
+			it.each(profitabilityTestCaseArray)('with profitability %s should be zero', (profitability) => {
 				const result = calcularJurosCompostosMensais(0, profitability, period);
 
 				expect(result).toBe(0);
