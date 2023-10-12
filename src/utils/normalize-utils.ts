@@ -3,8 +3,8 @@ import ProfitabilityType from '@src/enums/profitability-type';
 export function normalizarRentabilidadeMensal(profitability: number, period: number, profitabilityType: ProfitabilityType) {
 	if (profitabilityType == ProfitabilityType.Anual) {
 		return {
-			montlhyProfitability: profitability * 12.68,
-			monthlyPeriod: period / 12
+			montlhyProfitability: profitability / 12.68,
+			monthlyPeriod: period * 12
 		};
 	}
 
@@ -14,7 +14,7 @@ export function normalizarRentabilidadeMensal(profitability: number, period: num
 	};
 }
 
-export function calcularJurosCompostosMensais(initialValue: number, montlhyProfitability: number, monthlyPeriod: number): number {
+export function calcularJurosCompostosMensais(initialValue: number, montlhyProfitability: number, monthlyPeriod: number){
 	const finalValue = 
 		initialValue + (
 			initialValue * (
@@ -22,4 +22,10 @@ export function calcularJurosCompostosMensais(initialValue: number, montlhyProfi
 			)
 		);
 	return parseFloat(finalValue.toFixed(2));
+}
+
+export function calcularCrescimento(initialValue: number, finalValue: number){
+	const result = (finalValue - initialValue) / initialValue;
+
+	return parseFloat(result.toFixed(2));
 }
