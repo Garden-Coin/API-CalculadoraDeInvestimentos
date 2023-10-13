@@ -27,5 +27,9 @@ export function calcularJurosCompostosMensais(initialValue: number, montlhyProfi
 export function calcularCrescimento(initialValue: number, finalValue: number){
 	const result = (finalValue - initialValue) / initialValue;
 
+	if(isNaN(result) || !isFinite(result)){
+		return 0.0;
+	}
+
 	return parseFloat(result.toFixed(2));
 }
