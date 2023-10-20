@@ -4,6 +4,7 @@
         "firsttris.vscode-jest-runner",
         "christian-kohler.path-intellisense",
         "dbaeumer.vscode-eslint",
-        "mikestead.dotenv"
+        "mikestead.dotenv",
+        "sonarsource.sonarlint-vscode"
     ]
 }

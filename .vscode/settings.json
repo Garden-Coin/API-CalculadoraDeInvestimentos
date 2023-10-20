@@ -4,5 +4,9 @@
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "sonarlint.connectedMode.project": {
+        "connectionId": "Garden-Coin_API-CalculadoraDeInvestimentos",
+        "projectKey": "Garden-Coin_API-CalculadoraDeInvestimentos"
     }
 }
