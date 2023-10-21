@@ -1,3 +1,10 @@
+const calcularMock = jest.fn();
+jest.mock('@src/services/juros-compostos-service', ()=>{
+	return {
+		calcular: calcularMock
+	};
+});
+
 import JurosCompostosController from '@src/controllers/juros-compostos-controller';
 import { JurosCompostosRequest } from '@src/requests/juros-compostos-request';
 import responseFactory from '../factories/express/response-factory';
@@ -29,6 +36,7 @@ describe('JurosCompostosController', () => {
 				realProfitability: requestBody.profitability,
 				finalValue: requestBody.initialValue + (requestBody.initialValue * requestBody.profitability)
 			};
+			calcularMock.mockReturnValue(expectedResponseJson);
 
 			JurosCompostosController.calcular(request, response);
 
