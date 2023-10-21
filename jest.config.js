@@ -11,5 +11,11 @@ module.exports = {
 	preset: 'ts-jest',
 	testEnvironment: 'node',
 	moduleNameMapper: moduleMapper,
+	collectCoverage: true,
+	testResultsProcessor: 'jest-sonar-reporter',
 	moduleDirectories: ['node_modules', __dirname],
+    coveragePathIgnorePatterns: [
+      "/node_modules/**",
+      "/test/**"
+    ]
 };

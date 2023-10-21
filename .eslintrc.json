@@ -1,6 +1,7 @@
 {
     "ignorePatterns":[
-        "dist/**"
+        "dist/**",
+        "jest.config.js"
     ],
     "env": {
         "browser": true,
