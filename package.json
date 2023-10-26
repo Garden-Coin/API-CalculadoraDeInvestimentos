@@ -11,8 +11,9 @@
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage --testResultsProcessor=jest-sonar-reporter",
-    "build": "npx tsc | npx tsc-alias",
-    "dev": "nodemon --exec ts-node ./src/index.ts"
+    "build": "npx tsc --project tsconfig.build.json --rootDir ./src | npx tsc-alias && node build.config.js",
+    "dev": "nodemon --exec ts-node ./src/index.ts",
+    "prod": "node ./dist/index.js NODE_ENV=production"
   },
   "authors": [
     "Franklin Bitencourt"
