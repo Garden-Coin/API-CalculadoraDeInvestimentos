@@ -8,5 +8,8 @@
     "sonarlint.connectedMode.project": {
         "connectionId": "Garden-Coin_API-CalculadoraDeInvestimentos",
         "projectKey": "Garden-Coin_API-CalculadoraDeInvestimentos"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
     }
 }
