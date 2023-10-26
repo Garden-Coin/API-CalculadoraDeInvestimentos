@@ -1,7 +1,6 @@
 name: API Build CI
 
 on:
-  workflow_dispatch:
   pull_request:
     branches: [main]
     types: [closed]
