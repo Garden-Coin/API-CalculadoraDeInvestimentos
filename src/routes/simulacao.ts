@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import { validate } from 'express-validation';
 
-import JurosCompostosController from '@src/controllers/juros-compostos-controller';
-import JurosCompostosRequestValidator from '@src/validators/juros-compostos-request-validator';
+import { JurosCompostosController } from '@src/controllers';
+import { JurosCompostosRequestValidator } from '@src/validators';
 
 const router = Router();
 
