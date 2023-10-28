@@ -7,16 +7,12 @@
       "@types/express"
     ],
     
-    "module": "commonjs",
+		"module": "Node16",
     "outDir": "./dist",
-    "moduleResolution": "node",
-    
-    "noEmitOnError": true,
-    
-    "esModuleInterop": true,
+    "moduleResolution": "Node16",
+        
     "forceConsistentCasingInFileNames": true,
     
-    "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
