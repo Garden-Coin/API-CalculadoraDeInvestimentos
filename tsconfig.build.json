@@ -1,7 +1,25 @@
 {
-	"extends": "tsconfig.json",
+	"extends":"./tsconfig.json",
 	"compilerOptions": {
-		"outDir": "./dist"
+		"module": "commonjs",
+		"outDir": "./dist",
+		"moduleResolution": "node",
+		"noEmitOnError": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"useUnknownInCatchVariables": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitOverride": true,
+		"noImplicitThis": true,
+		"paths": {
+			"@src/*": ["./src/*"],
+			"@config/*": ["./src/config/*"]
+		}
 	},
 	"exclude": [
 		"./tests/*"
