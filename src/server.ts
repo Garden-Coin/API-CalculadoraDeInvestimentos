@@ -3,17 +3,16 @@ import { port, cors_origin } from '@config/server';
 import cors from 'cors';
 import helmet from 'helmet';
 import compression from 'compression';
-import {rateLimit} from 'express-rate-limit';
+import { rateLimit } from 'express-rate-limit';
 
 const app = express();
 
 app.use(express.json());
 app.use(compression());
 
-const corsOptions = {
+app.use(cors({
 	origin: cors_origin
-};
-app.use(cors(corsOptions));
+}));
 app.use(helmet.hidePoweredBy());
 app.use(rateLimit({
 	windowMs: 1000,
