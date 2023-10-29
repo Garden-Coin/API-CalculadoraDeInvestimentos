@@ -16,7 +16,7 @@ Depois já vai ser possivel executar a aplicação em watch mode
 ```
 npm run dev
 ```
-Ao dar um GET no endpoint `/health-check`, será retornado o endpoint:
+Ao dar um GET no endpoint `/health-check`, será retornado o seguinte json:
 ```json
 {
     "status": 200
