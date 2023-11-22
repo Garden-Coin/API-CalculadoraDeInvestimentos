@@ -30,7 +30,7 @@ npm run test
 
 ## Rodando localmente junto com uma aplicação web
 Caso você estea rodando uma aplicação web localmente, existem alguns pontos a se considerar:
-* Não sar a porta 3000, react e next geralmente usam ela pra subir a aplicação
+* Não usar a porta 3000, react e next geralmente usam ela pra subir a aplicação
 * Configurar o valor `CORS_ORIGIN` para * ou a url da aplicação web local
 
 ## Métricas de qualidade
