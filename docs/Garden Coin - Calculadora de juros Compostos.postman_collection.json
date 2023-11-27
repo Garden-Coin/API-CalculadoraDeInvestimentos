@@ -3,7 +3,8 @@
 		"_postman_id": "8119ed2c-3870-4d75-a665-440168fc37e5",
 		"name": "Garden Coin - Calculadora de juros Compostos",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "6663010"
+		"_exporter_id": "6663010",
+		"_collection_link": "https://garden-coin-teams.postman.co/workspace/garden-coin-team-Workspace~2cfe8378-2f72-4339-a4cb-483e375e9caa/collection/6663010-8119ed2c-3870-4d75-a665-440168fc37e5?action=share&source=collection_link&creator=6663010"
 	},
 	"item": [
 		{
@@ -16,7 +17,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"period\": 1,\r\n    \"profitability\": 0.05,\r\n    \"profitabilityType\": 1,\r\n    \"initialValue\": 1000\r\n}",
+							"raw": "{\r\n    \"period\": 1,\r\n    \"periodType\": 2,\r\n    \"profitability\": 1,\r\n    \"profitabilityType\": 1,\r\n    \"initialValue\": 5000\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -95,6 +96,71 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"period\": 6,\n    \"profitability\": 0.05,\n    \"realProfitability\": 0.05,\n    \"profitabilityType\": 1,\n    \"initialValue\": 1000,\n    \"finalValue\": 1050\n}"
+						},
+						{
+							"name": "Validation Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"period\": 1,\r\n    \"periodType\": 2,\r\n    \"profitability\": 1,\r\n    \"profitabilityType\": 1,\r\n    \"initialValue\": 5000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/simulacao/juros-compostos",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"simulacao",
+										"juros-compostos"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "126"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7e-DERICve7ydqyvvuQ5XL3vn5QDdg\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Nov 2023 01:45:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"Validation Failed\",\n    \"code\": \"Bad Request\",\n    \"errors\": [\n        {\n            \"field\": \"fieldNama\",\n            \"message\": \"fieldErrorMessage\"\n        }\n    ]\n}"
 						}
 					]
 				}
