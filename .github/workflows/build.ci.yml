@@ -3,10 +3,13 @@ name: API Build CI
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: main
+    paths-ignore:
+      - 'docs/**'
+      - 'README.md'
   pull_request:
-    branches: [main]
-    types: [closed]
+    branches: main
+    types: closed
 jobs:
   build:
     runs-on: ubuntu-latest
