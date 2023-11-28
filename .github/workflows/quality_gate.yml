@@ -2,9 +2,15 @@ name: Quality Gate
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: main
+    paths:
+      - '**'
+      - '!/docs/**'
   pull_request:
-    branches: [main]
+    branches: main
+    paths:
+      - '**'
+      - '!/docs/**'
 jobs:
   sonarcloud:
     name: SonarCloud
