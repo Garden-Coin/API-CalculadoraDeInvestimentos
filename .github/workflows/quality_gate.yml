@@ -3,12 +3,14 @@ on:
   workflow_dispatch:
   push:
     branches: main
-    paths:
-      - '!/docs/**'
+    paths-ignore:
+      - '/docs/**'
+      - 'README.md'
   pull_request:
     branches: main
-    paths:
-      - '!/docs/**'
+    paths-ignore:
+      - '/docs/**'
+      - 'README.md'
 jobs:
   sonarcloud:
     name: SonarCloud
