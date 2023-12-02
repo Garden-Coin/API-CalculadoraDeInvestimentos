@@ -43,6 +43,7 @@ describe('juros compostos service', () => {
 					const body = jurosCompostosRequestBodyFactory(
 						{
 							profitabilityType: ProfitabilityType.Monthly,
+							periodType: ProfitabilityType.Monthly,
 							initialValue: 1000,
 							profitability: 0.01,
 							period: 12
@@ -57,6 +58,7 @@ describe('juros compostos service', () => {
 					const monthlyBody = jurosCompostosRequestBodyFactory(
 						{
 							profitabilityType: ProfitabilityType.Monthly,
+							periodType: ProfitabilityType.Monthly,
 							period: 12
 						}
 					);
@@ -67,6 +69,7 @@ describe('juros compostos service', () => {
 							initialValue: monthlyBody.initialValue,
 							profitabilityType: ProfitabilityType.Anual,
 							profitability: monthlyBody.profitability * 12.68,
+							periodType: ProfitabilityType.Anual,
 							period: monthlyBody.period / 12
 						}
 					);
@@ -82,6 +85,7 @@ describe('juros compostos service', () => {
 							profitabilityType: ProfitabilityType.Anual,
 							initialValue: 1000,
 							profitability: 0.1268,
+							periodType: ProfitabilityType.Anual,
 							period: 1
 						}
 					);

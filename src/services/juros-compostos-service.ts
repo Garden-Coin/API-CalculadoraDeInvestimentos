@@ -22,7 +22,7 @@ export default {
 		initialValue = parseFloat(initialValue.toFixed(2));
 
 		const monthlyPeriod = periodType == ProfitabilityType.Monthly? period : period * 12;
-		const montlhyProfitability = profitabilityType == ProfitabilityType.Monthly? period : period / 12.68;
+		const montlhyProfitability = profitabilityType == ProfitabilityType.Monthly? profitability : profitability / 12.68;
 
 		const finalValue = calcularJurosCompostosMensais(initialValue, montlhyProfitability, monthlyPeriod);
 		const realProfitability = calcularCrescimento(initialValue, finalValue);
