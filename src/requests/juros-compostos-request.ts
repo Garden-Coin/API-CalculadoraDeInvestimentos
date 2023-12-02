@@ -3,6 +3,7 @@ import { Request } from 'express';
 
 export interface JurosCompostosRequestBody {
     period: number,
+    periodType: ProfitabilityType,
     profitability: number,
     profitabilityType: ProfitabilityType,
     initialValue: number

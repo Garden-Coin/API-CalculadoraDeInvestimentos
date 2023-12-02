@@ -1,7 +1,7 @@
 import ProfitabilityType from '@src/enums/profitability-type';
 
-export function normalizarRentabilidadeMensal(profitability: number, period: number, profitabilityType: ProfitabilityType) {
-	if (profitabilityType == ProfitabilityType.Anual) {
+export function normalizarRentabilidadeMensal(profitability: number, period: number, periodType: ProfitabilityType) {
+	if (periodType == ProfitabilityType.Anual) {
 		return {
 			montlhyProfitability: profitability / 12.68,
 			monthlyPeriod: period * 12
