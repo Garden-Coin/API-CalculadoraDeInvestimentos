@@ -1,5 +1,5 @@
 import ProfitabilityType from '@src/enums/profitability-type';
-import { calcularCrescimento, calcularJurosCompostosMensais, normalizarRentabilidadeMensal } from '@src/utils/normalize-utils';
+import { calcularCrescimento, calcularJurosCompostosMensais } from '@src/utils/normalize-utils';
 
 type JurosCompostosServiceProps = {
 	period: number,
@@ -17,10 +17,13 @@ export default {
 			profitability,
 			profitabilityType,
 			initialValue
-		}: JurosCompostosServiceProps) {
+		}: JurosCompostosServiceProps
+	) {
 		initialValue = parseFloat(initialValue.toFixed(2));
 
-		const { montlhyProfitability, monthlyPeriod } = normalizarRentabilidadeMensal(profitability, period, periodType);
+		const monthlyPeriod = periodType == ProfitabilityType.Monthly? period : period * 12;
+		const montlhyProfitability = profitabilityType == ProfitabilityType.Monthly? period : period / 12.68;
+
 		const finalValue = calcularJurosCompostosMensais(initialValue, montlhyProfitability, monthlyPeriod);
 		const realProfitability = calcularCrescimento(initialValue, finalValue);
 		
