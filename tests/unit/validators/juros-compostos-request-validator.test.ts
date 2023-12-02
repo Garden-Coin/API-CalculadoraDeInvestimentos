@@ -65,7 +65,7 @@ describe(
 						const body = jurosCompostosRequestBodyFactory({periodType: type});
 						const valid = bodyValidator.validate(body);
 
-						expect(valid?.error?.message).toBe('"profitabilityType" must be one of [1, 2]');
+						expect(valid?.error?.message).toBe('"periodType" must be one of [1, 2]');
 					}
 				);
 			}
