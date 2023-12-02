@@ -37,6 +37,22 @@ describe('juros compostos service', () => {
 				});
 			});
 		});
+		describe('no period', () => {
+			describe.each(
+				[
+					['montlhy',ProfitabilityType.Monthly], 
+					['anual',ProfitabilityType.Anual],
+				]
+			)('%s', (_,profitabilityType) => {
+				it('should be equal to initialValue', () => {
+					const body = jurosCompostosRequestBodyFactory({ period: 0, profitabilityType });
+
+					const result = jurosCompostosService.calcular(body);
+
+					expect(result.finalValue).toBe(result.initialValue);
+				});
+			});
+		});
 		describe('valid profitability', () => {
 			describe('monthly', () => {
 				it('should sum profitability\'s percentage to finalValue', () => {
@@ -94,6 +110,14 @@ describe('juros compostos service', () => {
 
 					expect(result.finalValue).toBe(1126.83);
 				});
+			});
+		});
+		describe.skip('valid period', ()=>{
+			describe.skip('monthly', () => {
+				
+			});
+			describe.skip('anual', () => {
+				
 			});
 		});
 	});
