@@ -37,12 +37,29 @@ describe('juros compostos service', () => {
 				});
 			});
 		});
+		describe('no period', () => {
+			describe.each(
+				[
+					['montlhy',ProfitabilityType.Monthly], 
+					['anual',ProfitabilityType.Anual],
+				]
+			)('%s', (_,profitabilityType) => {
+				it('should be equal to initialValue', () => {
+					const body = jurosCompostosRequestBodyFactory({ period: 0, profitabilityType });
+
+					const result = jurosCompostosService.calcular(body);
+
+					expect(result.finalValue).toBe(result.initialValue);
+				});
+			});
+		});
 		describe('valid profitability', () => {
 			describe('monthly', () => {
 				it('should sum profitability\'s percentage to finalValue', () => {
 					const body = jurosCompostosRequestBodyFactory(
 						{
 							profitabilityType: ProfitabilityType.Monthly,
+							periodType: ProfitabilityType.Monthly,
 							initialValue: 1000,
 							profitability: 0.01,
 							period: 12
@@ -57,6 +74,7 @@ describe('juros compostos service', () => {
 					const monthlyBody = jurosCompostosRequestBodyFactory(
 						{
 							profitabilityType: ProfitabilityType.Monthly,
+							periodType: ProfitabilityType.Monthly,
 							period: 12
 						}
 					);
@@ -67,6 +85,7 @@ describe('juros compostos service', () => {
 							initialValue: monthlyBody.initialValue,
 							profitabilityType: ProfitabilityType.Anual,
 							profitability: monthlyBody.profitability * 12.68,
+							periodType: ProfitabilityType.Anual,
 							period: monthlyBody.period / 12
 						}
 					);
@@ -82,6 +101,7 @@ describe('juros compostos service', () => {
 							profitabilityType: ProfitabilityType.Anual,
 							initialValue: 1000,
 							profitability: 0.1268,
+							periodType: ProfitabilityType.Anual,
 							period: 1
 						}
 					);
@@ -90,6 +110,14 @@ describe('juros compostos service', () => {
 
 					expect(result.finalValue).toBe(1126.83);
 				});
+			});
+		});
+		describe.skip('valid period', ()=>{
+			describe.skip('monthly', () => {
+				
+			});
+			describe.skip('anual', () => {
+				
 			});
 		});
 	});

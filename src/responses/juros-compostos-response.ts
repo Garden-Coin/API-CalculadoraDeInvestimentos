@@ -3,9 +3,10 @@ import ProfitabilityType from '../enums/profitability-type';
 
 export interface JurosCompostosResponseBody {
     period: number,
+    periodType: ProfitabilityType,
     profitability: number,
-    realProfitability: number,
     profitabilityType: ProfitabilityType,
+    realProfitability: number,
     initialValue: number,
     finalValue: number
 }
