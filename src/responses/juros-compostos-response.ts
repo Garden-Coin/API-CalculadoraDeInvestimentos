@@ -1,11 +1,11 @@
 import { Response } from 'express';
-import ProfitabilityType from '../enums/profitability-type';
+import PeriodType from '../enums/period-type';
 
 export interface JurosCompostosResponseBody {
     period: number,
-    periodType: ProfitabilityType,
+    periodType: PeriodType,
     profitability: number,
-    profitabilityType: ProfitabilityType,
+    profitabilityType: PeriodType,
     realProfitability: number,
     initialValue: number,
     finalValue: number

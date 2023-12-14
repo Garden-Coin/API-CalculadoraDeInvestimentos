@@ -1,11 +1,11 @@
-import ProfitabilityType from '@src/enums/profitability-type';
+import PeriodType from '@src/enums/period-type';
 import { Request } from 'express';
 
 export interface JurosCompostosRequestBody {
     period: number,
-    periodType: ProfitabilityType,
+    periodType: PeriodType,
     profitability: number,
-    profitabilityType: ProfitabilityType,
+    profitabilityType: PeriodType,
     initialValue: number
 }
 
