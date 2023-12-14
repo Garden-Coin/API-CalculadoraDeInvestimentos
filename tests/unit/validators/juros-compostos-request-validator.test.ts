@@ -60,7 +60,7 @@ describe(
 			'periodType',
 			()=>{
 				it.each([0,4,-1])(
-					'should not be a number outside of ProfitabilityType enum',
+					'should not be a number outside of PeriodType enum',
 					(type)=>{
 						const body = jurosCompostosRequestBodyFactory({periodType: type});
 						const valid = bodyValidator.validate(body);
